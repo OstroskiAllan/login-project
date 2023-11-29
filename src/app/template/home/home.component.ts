@@ -1,6 +1,7 @@
 import { Router} from '@angular/router';
 import { AuthService } from './../../auth.service';
 import { Component } from '@angular/core';
+ 
 
 @Component({
   selector: 'app-home',
@@ -13,7 +14,24 @@ export class HomeComponent {
 
 
   constructor(private authService: AuthService, private router: Router){}
+  //Login atraves do dados mockados
+  onLogin():void{
+    this.authService.login(this.nome, this.senha).subscribe(
+      data=> {
+        if(data && data.token){
+          //Login bem sucedido, redirecione para a dash
+          localStorage.setItem('user', JSON.stringify(data));
+          this.router.navigate(['/dashboard']);
+        }else {
+          //Login falhou!
+          this.router.navigate(['/error']);
+        }
+      }
+    )
+  }
 
+  //Login atraves da api
+  /*
   onLogin(): void{
     this.authService.login(this.nome, this.senha).subscribe(
       data => {
@@ -32,5 +50,5 @@ export class HomeComponent {
       }
     );
   }
-
+  */
 }
