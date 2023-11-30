@@ -8,20 +8,32 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ErrorComponent } from './components/error/error.component';
+import { FooterComponent } from './template/footer/footer.component';
+import { HeaderComponent } from './template/header/header.component';
+import { RecuperarSenhaComponent } from './components/cadastrar/recuperar-senha/recuperar-senha.component';
+import { CadastrarUsuarioComponent } from './components/cadastrar/cadastrar-usuario/cadastrar-usuario.component';
+import { NavComponent } from './template/nav/nav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     DashboardComponent,
-    ErrorComponent
+    ErrorComponent,
+    FooterComponent,
+    HeaderComponent,
+    RecuperarSenhaComponent,
+    CadastrarUsuarioComponent,
+    NavComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+   
     
   ],
   providers: [],

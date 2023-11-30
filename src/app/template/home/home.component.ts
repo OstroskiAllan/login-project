@@ -29,7 +29,13 @@ export class HomeComponent {
       }
     )
   }
-
+  //navegação entre paginas
+  recuperarSenha(): void {
+    this.router.navigate(['/recuperar-senha'])
+  }
+  cadastarUsuario(): void {
+    this.router.navigate(['/cadastrar-usuario'])
+  }
   //Login atraves da api
   /*
   onLogin(): void{
